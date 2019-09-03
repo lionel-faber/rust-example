@@ -8,6 +8,9 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-#    - uses: actions/checkout@v1
-    - name: Run a one-line script
-      run: echo Hello, world!
+    - uses: actions/checkout@v1
+    - name: Build the project
+      run: cargo build --release
+    - name: Print something
+      run: ./target/release/hello_world Lionel
+    
