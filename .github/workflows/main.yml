@@ -27,8 +27,8 @@ jobs:
           fi
         else
           echo 'There are compilation errors'
-          labels+='"not reproducible", "errored"'
+          labels+='"not-reproducible", "errored"'
         fi
-        curl -u lionel1704:${{ secrets.GH_TOKEN }} -X POST https://api.github.com/repos/lionel1704/gh-actions-demo/issues/1/labels -d "{ \"labels\" : [$labels]}"
+        curl -u lionel1704:${{ secrets.GH_TOKEN }} -X PUT https://api.github.com/repos/lionel1704/gh-actions-demo/issues/1/labels -d "{ \"labels\" : [$labels]}"
     - name: Print payload
       run: echo "${{ toJson(github) }}"
