@@ -9,9 +9,13 @@ jobs:
     
     steps:
     - uses: actions/checkout@v1
-    - name: Build the project
-      run: cargo build --release
-    - name: Print something
-      run: ./target/release/hello_world "${{ github.event.issue.body }}"
+    - name: Build and run the tests
+      run: |
+        cargo build --release
+        cargo test --release
+    - name: Run codeblock from the issue
+      run: |
+      sed -n '/```test_start/,/```/p' "${{ github.event.issue.body }}" | sed '/^```/ d > reproduce_issue.rs'
+      cargo test --release reproduce_issue
     - name: Print payload
       run: echo "${{ toJson(github) }}"
