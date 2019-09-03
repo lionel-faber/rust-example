@@ -29,6 +29,4 @@ jobs:
           echo 'There are compilation errors'
           labels+='"not-reproducible", "errored"'
         fi
-        curl -u lionel1704:${{ secrets.GH_TOKEN }} -X PUT https://api.github.com/repos/lionel1704/gh-actions-demo/issues/1/labels -d "{ \"labels\" : [$labels]}"
-    - name: Print payload
-      run: echo "${{ toJson(github) }}"
+        curl -u lionel1704:${{ secrets.GH_TOKEN }} -X PUT https://api.github.com/repos/lionel1704/gh-actions-demo/issues/${{ github.event.issue.number }}/labels -d "{ \"labels\" : [$labels]}"
