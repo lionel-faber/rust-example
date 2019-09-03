@@ -12,6 +12,6 @@ jobs:
     - name: Build the project
       run: cargo build --release
     - name: Print something
-      run: ./target/release/hello_world Lionel
+      run: ./target/release/hello_world "${{ github.issue.body }}"
     - name: Print payload
-      run: echo ${{ toJson(github) }}
+      run: echo "${{ toJson(github) }}"
