@@ -15,7 +15,7 @@ jobs:
         cargo test --release
     - name: Run codeblock from the issue
       run: |
-      sed -n '/```test_start/,/```/p' "${{ github.event.issue.body }}" | sed '/^```/ d > reproduce_issue.rs'
+      sed -n '/```test_start/,/```/p' "${{ github.event.issue.body }}" | sed '/^```/ d' > reproduce_issue.rs
       cargo test --release reproduce_issue
     - name: Print payload
       run: echo "${{ toJson(github) }}"
