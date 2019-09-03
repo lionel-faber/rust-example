@@ -24,6 +24,7 @@ jobs:
             labels+="not-reproducible"
           else
             labels+="reproducible"
+          fi
         else
           echo 'There are compilation errors'
           labels+='"not reproducible", "errored"'
