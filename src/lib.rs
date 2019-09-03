@@ -8,6 +8,7 @@ pub mod calculator {
     }
 }
 
+#[cfg(test)]
 mod reproduce_issue;
 
 #[cfg(test)]
