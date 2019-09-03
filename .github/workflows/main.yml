@@ -17,6 +17,10 @@ jobs:
       run: |
         echo '${{ github.event.issue.body }}' > issue_body
         sed -n '/```test_start/,/```/p' issue_body | sed '/^```/ d' > src/reproduce_issue.rs
-        cargo test --release reproduce_issue
+        if [ cargo check --tests ]; then
+          cargo test --release reproduce_issue
+        else
+          echo "There are compilation errors in the code block"
+        fi
     - name: Print payload
       run: echo "${{ toJson(github) }}"
