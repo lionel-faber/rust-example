@@ -1,0 +1,15 @@
+name: Assignee to reviewer
+
+on: [pull_request]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Assign a reviewer based on the assignee
+      uses: pullreminders/assignee-to-reviewer-action@v1.0.4
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        REVIEWERS_UNMODIFIED_EXIT_CODE: 0
