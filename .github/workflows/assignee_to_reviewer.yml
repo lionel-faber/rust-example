@@ -1,7 +1,8 @@
 name: Assignee to reviewer
 
-on: pull_request
-  types: [assigned, unassigned, edited]
+on: 
+  pull_request:
+    types: [assigned, unassigned, edited]
 
 jobs:
   build:
