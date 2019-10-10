@@ -18,10 +18,10 @@ labels=''
 echo $issue_body_text > issue_body
 echo "before"
 cat issue_body
-sed -n -i '/```test_start/,/```/p' issue_body
+sed -n -i '/```test_start/,/```/p' ./issue_body
 echo "during"
 cat issue_body
-sed -i '/^```/ d' issue_body
+sed -i '/^```/ d' ./issue_body
 echo "after"
 cat issue_body
 cat issue_body > src/reproduce_issue.rs
