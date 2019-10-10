@@ -43,7 +43,8 @@ curl -sSL \
 
 curl -sSL \
     -H "Content-Type: application/json" \
+    -H "${AUTH_HEADER}" \
     -H "${API_HEADER}" \
     -X POST \
-    -d "{ \"body\" : \"Testing out a comment\"}" \
+    -d "{ \"body\" : \"$message\"}" \
     https://api.github.com/repos/lionel1704/gh-actions-demo/issues/${issue_number}/comments
