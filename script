@@ -1,1 +1,0 @@
-sed -n '/```test_start/,/```/p' test-issue | sed '/^```/ d' > src/reproduce_issue.rs
