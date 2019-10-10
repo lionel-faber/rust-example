@@ -17,7 +17,7 @@ jobs:
       id: issue-doctor
       uses: ./actions/issue-doctor
       env:
-        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 
 # run: |
