@@ -16,8 +16,15 @@ issue_number=$(jq --raw-output .issue.number "$GITHUB_EVENT_PATH")
 
 labels=''
 echo $issue_body > issue_body
-sed -n '/```test_start/,/```/p' issue_body | sed '/^```/ d' > src/reproduce_issue.rs
-sed -n '/```test_start/,/```/p' issue_body | sed '/^```/ d'
+echo "before"
+cat issue_body
+sed -n -i '/```test_start/,/```/p' issue_body
+echo "during"
+cat issue_body
+sed -i '/^```/ d' issue_body
+echo "after"
+cat issue_body
+cat issue_body > src/reproduce_issue.rs
 if cargo check --tests; then
     if cargo test --release reproduce_issue; then
     message='The issue is not reproducible'
