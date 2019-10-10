@@ -1,5 +1,5 @@
-# #!/bin/bash
-# set -eu
+#!/bin/bash
+set -eu
 
 sed --version
 
