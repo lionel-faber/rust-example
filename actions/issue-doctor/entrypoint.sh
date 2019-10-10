@@ -1,5 +1,3 @@
-#set -eu
-
 sed --version
 
 if [[ -z "$GITHUB_TOKEN" ]]; then
