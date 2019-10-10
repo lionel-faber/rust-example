@@ -1,0 +1,15 @@
+name: 'Rust Issue Doctor'
+description: 'Check if an issue is reproducible'
+
+inputs:
+  gh-token:
+    description: 'Github API Token'
+    required: true
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ github.event.issue.body }}
+    - ${{ github.event.issue.number }}
+    - ${{ inputs.gh-token }}
