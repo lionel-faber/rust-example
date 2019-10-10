@@ -17,6 +17,8 @@ issue_number=$(jq --raw-output .issue.number "$GITHUB_EVENT_PATH")
 labels=''
 echo $issue_body > issue_body
 cat issue_body
+ls
+pwd
 sed -n '/```test_start/,/```/p' issue_body | sed '/^```/ d' > src/reproduce_issue.rs
 if cargo check --tests; then
     if cargo test --release reproduce_issue; then
