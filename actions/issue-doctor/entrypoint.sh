@@ -11,11 +11,11 @@ fi
 API_HEADER="Accept: application/vnd.github.v3+json; application/vnd.github.antiope-preview+json"
 AUTH_HEADER="Authorization: token ${GITHUB_TOKEN}"
 
-issue_body=$(jq --raw-output .issue.body "$GITHUB_EVENT_PATH")
+issue_body_text=$(jq --raw-output .issue.body "$GITHUB_EVENT_PATH")
 issue_number=$(jq --raw-output .issue.number "$GITHUB_EVENT_PATH")
 
 labels=''
-echo $issue_body > issue_body
+echo $issue_body_text > issue_body
 echo "before"
 cat issue_body
 sed -n -i '/```test_start/,/```/p' issue_body
