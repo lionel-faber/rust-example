@@ -1,3 +1,5 @@
+#!/bin/sh
+
 sed --version
 
 if [[ -z "$GITHUB_TOKEN" ]]; then
