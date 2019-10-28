@@ -17,7 +17,7 @@ jobs:
       - name: Publish to crates.io
         uses: actions-rs/cargo@v1
         with:
-          commane: publish
+          command: publish
       - name: Publish to GitHub releases
         uses: softprops/action-gh-release@v1
         env:
