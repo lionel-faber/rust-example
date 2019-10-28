@@ -1,5 +1,9 @@
 [package]
 name = "lionel-says-hello"
+description = "Crate for testing"
+license = "MIT"
+homepage = "https://github.com/lionel1704/gh-actions-demo"
+repository = "https://github.com/lionel1704/gh-actions-demo"
 version = "0.1.0"
 authors = ["Lionel Faber <lionel1704@gmail.com>"]
 edition = "2018"
