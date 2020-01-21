@@ -14,8 +14,7 @@ jobs:
     - name: Try Find command
       run: |
         mkdir test
-        which find
-        echo "find "src" -maxdepth 1 -type f -exec cp '{}' test \;" | bash
+        /usr/bin/find "src" -maxdepth 1 -type f -exec cp '{}' test \;
       shell: bash
 #     - name: Build and run the tests
 #       run: |
