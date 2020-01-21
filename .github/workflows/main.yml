@@ -7,14 +7,14 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     
     steps:
     - uses: actions/checkout@v1
     - name: Try Find command
       run: |
         mkdir test
-        find "src" -maxdepth 1 -type f -exec cp '{}' test /;
+        find "src" -maxdepth 1 -type f -exec cp '{}' test \;
 #     - name: Build and run the tests
 #       run: |
 #         cargo build --release
