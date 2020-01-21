@@ -14,8 +14,8 @@ jobs:
     - name: Try Find command
       run: |
         mkdir test
+        export PATH=$PATH;C:\Program Files\Git\usr\bin\
         which find
-        export PATH=$PATH:C:\Program Files\Git\usr\bin\
         find "src" -maxdepth 1 -type f -exec cp '{}' test \;
       shell: bash
 #     - name: Build and run the tests
