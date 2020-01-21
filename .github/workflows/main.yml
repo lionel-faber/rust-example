@@ -17,7 +17,7 @@ jobs:
         echo "::add-path::C:\Program Files\Git\usr\bin"
         which find
         find "src" -maxdepth 1 -type f -exec cp '{}' test \;
-      shell: bash
+      shell: pwsh 
 #     - name: Build and run the tests
 #       run: |
 #         cargo build --release
