@@ -16,6 +16,7 @@ jobs:
         mkdir test
         which find
         echo "find "src" -maxdepth 1 -type f -exec cp '{}' test \;" | bash
+      shell: bash
 #     - name: Build and run the tests
 #       run: |
 #         cargo build --release
