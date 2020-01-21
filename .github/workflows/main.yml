@@ -7,14 +7,14 @@ on:
 jobs:
   build:
 
-    runs-on: windows-latest
-    
+    runs-on: [ubuntu-latest, macos-latest, windows-latest]
     steps:
-#     - uses: actions/checkout@v1
+    - uses: actions/checkout@v1
     - name: Try Find command
       run: |
         mkdir test
         /usr/bin/find "src" -maxdepth 1 -type f -exec cp '{}' test \;
+        ls test
       shell: bash
 #     - name: Build and run the tests
 #       run: |
