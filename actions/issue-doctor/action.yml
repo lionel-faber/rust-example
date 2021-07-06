@@ -1,6 +1,0 @@
-name: 'Rust Issue Doctor'
-description: 'Check if an issue is reproducible'
-
-runs:
-  using: 'docker'
-  image: 'Dockerfile'
